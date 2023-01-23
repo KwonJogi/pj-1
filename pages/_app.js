@@ -1,7 +1,23 @@
-import '../styles/globals.css'
+import Head from "next/head";
+import React from "react";
+import reset from "styled-reset";
+import { createGlobalStyle } from "styled-components";
+import AppLayout from "../components/AppLayout";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const GlobalStyles = createGlobalStyle`
+${reset}
+`;
 
-export default MyApp
+const _app = ({ Component }) => {
+  return (
+    <>
+      <Head>
+        <title>project-1</title>
+      </Head>
+      <GlobalStyles />
+      <AppLayout>{Component}</AppLayout>
+    </>
+  );
+};
+
+export default _app;
