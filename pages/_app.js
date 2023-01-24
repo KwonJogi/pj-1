@@ -15,7 +15,9 @@ const _app = ({ Component }) => {
         <title>project-1</title>
       </Head>
       <GlobalStyles />
-      <AppLayout>{Component}</AppLayout>
+      <AppLayout>
+        <Component />
+      </AppLayout>
     </>
   );
 };
